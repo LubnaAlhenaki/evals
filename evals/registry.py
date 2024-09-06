@@ -43,7 +43,7 @@ def n_ctx_from_model_name(model_name: str) -> Optional[int]:
         ("gpt-4-32k-", 32768),
         ("gpt-4-", 8192),
 	("gpt-4o-mini", 128_000),
-	("gpt-4o": 128_000),
+	("gpt-4o", 128_000),
     ]
     MODEL_NAME_TO_N_CTX: dict[str, int] = {
         "ada": 2048,
