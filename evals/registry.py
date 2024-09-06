@@ -67,8 +67,8 @@ def n_ctx_from_model_name(model_name: str) -> Optional[int]:
         "gpt-4-1106-preview": 128_000,
         "gpt-4-turbo-preview": 128_000,
         "gpt-4-0125-preview": 128_000,
-	"gpt-4o-mini", 128_000,
-	"gpt-4o", 128_000,
+	"gpt-4o-mini": 128_000,
+	"gpt-4o": 128_000,
     }
 
     # first, look for an exact match
