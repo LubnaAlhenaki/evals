@@ -18,20 +18,29 @@ def zero_if_none(input_num):
 
 
 MODELS = [
-    "gpt-4-0125-preview",
+   "cot/gpt-4-turbo-preview",
+    "gpt-4-turbo-preview",
+    "cot/gpt-3.5-turbo",
+    "gpt-3.5-turbo",
     "gpt-4-base",
-    "gpt-3.5-turbo-0125",
-    "gemini-pro-1.0",
+    "gpt-4o",
+    "gemini-pro",
     "mixtral-8x7b-instruct",
     "llama-2-70b-chat",
+    "gpt-4o-mini",
     "random_baseline",
-    "human_baseline",
+    "ft:gpt-4o-mini-2024-07-18:ksu:binarypropaganda:A2evi4H3",
 ]
 # separate list for OAI models for token counting, not supported in others.
 OAI_MODELS = [
-    "gpt-4-0125-preview",
-    "gpt-3.5-turbo-0125",
+   "cot/gpt-4-turbo-preview",
+    "gpt-4-turbo-preview",
+    "cot/gpt-3.5-turbo",
+    "gpt-3.5-turbo",
     "gpt-4-base",
+    "gpt-4o-mini",
+    "gpt-4o",
+    "ft:gpt-4o-mini-2024-07-18:ksu:binarypropaganda:A2evi4H3",
 ]
 
 STAT_TO_LABEL = {
@@ -64,6 +73,12 @@ def get_model(spec):
         return "random_baseline"
     elif "human" in spec["completion_fns"][0]:
         return "human_baseline"
+    elif "gpt-4o" in spec["completion_fns"][0]:
+        return "gpt-4o"
+    elif "gpt-4o-mini" in spec["completion_fns"][0]:
+        return "gpt-4o-mini"
+    elif "ft:gpt-4o-mini-2024-07-18:ksu:binarypropaganda:A2evi4H3" in spec["completion_fns"][0]:
+        return "ft:gpt-4o-mini-2024-07-18:ksu:binarypropaganda:A2evi4H3"
 
 
 def get_state_tracking(spec):
